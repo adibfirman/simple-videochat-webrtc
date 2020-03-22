@@ -17276,7 +17276,7 @@
 	var lib_4 = lib$1.Manager;
 	var lib_5 = lib$1.Socket;
 
-	var socket$2 = lib$1("http://localhost:3000");
+	var socket$2 = lib$1("https://secret-everglades-14227.herokuapp.com");
 	var video = document.querySelector("video");
 	var client = {};
 

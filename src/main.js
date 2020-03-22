@@ -1,7 +1,7 @@
 import Peer from "simple-peer";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://secret-everglades-14227.herokuapp.com");
 const video = document.querySelector("video");
 const client = {};
 
