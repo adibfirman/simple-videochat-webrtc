@@ -3,14 +3,16 @@ import resolve from "@rollup/plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import builtins from "rollup-plugin-node-builtins";
 import globals from "rollup-plugin-node-globals";
+import json from "@rollup/plugin-json";
 
 export default {
   plugins: [
-    babel({ exclude: "node_modules/**" }),
+    babel({ exclude: "node_modules/**", runtimeHelpers: true }),
     resolve({ browser: true, preferBuiltins: true }),
     commonjs(),
     builtins(),
-    globals()
+    globals(),
+    json()
   ],
   watch: {
     exclude: "node_modules/**"
@@ -19,6 +21,8 @@ export default {
   output: {
     file: "./src/bundle.js",
     format: "iife",
-    name: "bundle"
+    globals: {
+      "socket.io-client": "io"
+    }
   }
 };
